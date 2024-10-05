@@ -34,7 +34,7 @@ class SimpleRunner:
 
     def _write(self, item, result, error):
         self._logger.info(f'Writing for {item.url}, result={result}, error={error}')
-        if error is not None:
+        if error:
             self._sink.write({'error': str(error), 'result': None})
             return
         self._sink.write({'error': None, 'result': result, 'url': item.url})
@@ -53,7 +53,7 @@ class SimpleRunner:
                     self._write(item, result, e)
                 else:
                     self._to_process.append(item)
-            if result is not None:
+            if result:
                 self._write(item, result, None)
 
             for elem in self._filter(next_urls):
