@@ -7,9 +7,9 @@ from utils.utils import FileSink
 
 def main():
     logging.basicConfig(
-        format='[%(asctime)s] %(name)s %(levelname)s: %(message)s',
+        format='[%(asctime)s] - %(name)s - %(levelname)s: %(message)s',
         datefmt='%d-%m-%y %H:%M:%S',
-        level='INFO',
+        level=logging.INFO,
     )
     logger = logging.getLogger('Runner')
     # главная - https://books.toscrape.com/index.html
