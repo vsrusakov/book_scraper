@@ -1,6 +1,5 @@
 from collections import deque
 import json
-import requests
 from utils.utils import Item
 
 
