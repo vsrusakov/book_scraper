@@ -12,7 +12,7 @@ class CssSelectorParser:
             title_text = title_elem.text
             result['title'] = title_text.strip()
 
-        description = root.select_one('meta[description]')
+        description = root.select_one('meta[name=description]')
         if description:
             description_text = description.attrs['content']
             result['description'] = description_text.strip()
